@@ -1,2 +1,4 @@
 # Payloads
-Payloads Collection
+Payload Collection
+
+Usefull payloads.
